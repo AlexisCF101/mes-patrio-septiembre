@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Septiembre: Mes Patrio</title>
+    <style>
+        /* --- VARIABLES DE COLOR (Paleta Patria) --- */
+        :root {
+            --verde-patrio: #006847;
+            --blanco: #ffffff;
+            --rojo-patrio: #ce1126;
+            --fondo-neutro: #f8f9fa;
+            --texto-oscuro: #212529;
+            --gris-borde: #e0e0e0;
+        }
+
+        /* --- ESTILOS GENERALES --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--fondo-neutro);
+            color: var(--texto-oscuro);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- HEADER & NAVEGACIÓN --- */
+        header {
+            background-color: var(--blanco);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 4px solid var(--verde-patrio);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--verde-patrio);
+        }
+
+        .logo span {
+            color: var(--rojo-patrio);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--texto-oscuro);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--rojo-patrio);
+        }
+
+        /* --- BANNER (HERO) --- */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.unsplash.com/photo-1568402102990-bc541580b59f?q=80&w=1000') center/cover;
+            color: var(--blanco);
+            text-align: center;
+            padding: 80px 20px;
+            border-bottom: 5px solid var(--rojo-patrio);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+
+        .btn-patrio {
+            display: inline-block;
+            background-color: var(--rojo-patrio);
+            color: var(--blanco);
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 15px;
+            border: 2px solid var(--rojo-patrio);
+            transition: all 0.3s ease;
+        }
+
+        .btn-patrio:hover {
+            background-color: transparent;
+            color: var(--blanco);
+            border-color: var(--blanco);
+        }
+
+        /* --- SECCIONES --- */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--verde-patrio);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--rojo-patrio);
+            margin: 10px auto 0;
+        }
+
+        /* --- LÍNEA DE TIEMPO --- */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--verde-patrio);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            background-color: inherit;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            right: -8px;
+            background-color: var(--blanco);
+            border: 4px solid var(--rojo-patrio);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left { left: 0; }
+        .right { left: 50%; }
+
+        .right::after { left: -8px; }
+
+        .timeline-content {
+            padding: 20px;
+            background-color: var(--blanco);
+            border-radius: 6px;
+            border-left: 4px solid var(--verde-patrio);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .timeline-content h3 {
+            color: var(--rojo-patrio);
+            margin-bottom: 5px;
+        }
+
+        /* --- PERSONAJES ILUSTRES --- */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--blanco);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--verde-patrio);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-body h3 {
+            color: var(--verde-patrio);
+            margin-bottom: 10px;
+        }
+
+        /* --- DATOS CURIOSOS Y MITOS --- */
+        .grid-facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .fact-box {
+            background-color: var(--blanco);
+            border: 1px solid var(--gris-borde);
+            border-left: 5px solid var(--rojo-patrio);
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .fact-box h4 {
+            color: var(--rojo-patrio);
+            margin-bottom: 10px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--texto-oscuro);
+            color: var(--blanco);
+            text-align: center;
+            padding: 20px 0;
+            border-top: 5px solid var(--verde-patrio);
+        }
+
+        /* RESPONSIVO */
+        @media screen and (max-width: 768px) {
+            .timeline::after { left: 31px; }
+            .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
+            .timeline-item::after { left: 23px; }
+            .right { left: 0%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ENCABEZADO -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Mes <span>Patrio</span></div>
+                <ul class="nav-links">
+                    <li><a href="#fechas">Línea de Tiempo</a></li>
+                    <li><a href="#personajes">Personajes</a></li>
+                    <li><a href="#mitos">Mitos y Datos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- BANNER PRINCIPAL -->
+    <div class="hero">
+        <div class="container">
+            <h1>Acontecimientos del Mes Patrio</h1>
+            <p>Descubre la historia, los héroes y los mitos que dieron forma a México durante el mes de septiembre.</p>
+            <a href="#fechas" class="btn-patrio">Ver Fechas Importantes</a>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 1: LÍNEA DE TIEMPO -->
+    <section id="fechas">
+        <div class="container">
+            <h2 class="section-title">Línea de Tiempo de Septiembre</h2>
+            <div class="timeline">
+                
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>13 de Septiembre</h3>
+                        <h4>Gesta Heroica de Chapultepec</h4>
+                        <p>Defensa del Castillo de Chapultepec por los Niños Héroes frente a la invasión estadounidense en 1847.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>15 de Septiembre</h3>
+                        <h4>El Grito de Dolores</h4>
+                        <p>Por la noche, se conmemora el llamado a las armas realizado por el cura Miguel Hidalgo en 1810.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>16 de Septiembre</h3>
+                        <h4>Inicio de la Independencia</h4>
+                        <p>Día oficial del inicio de la Lucha por la Independencia de México. Se realiza el tradicional desfile militar.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>27 de Septiembre</h3>
+                        <h4>Consumación de la Independencia</h4>
+                        <p>En 1821, el Ejército Trigarante entra triunfalmente a la Ciudad de México, dando fin a la guerra de independencia.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>30 de Septiembre</h3>
+                        <h4>Nacimiento de José María Morelos</h4>
+                        <p>Nacimiento en 1765 de Morelos y Pavón, "El Siervo de la Nación", pieza fundamental en el movimiento insurgente.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 2: PERSONAJES ILUSTRES -->
+    <section id="personajes" style="background-color: #f0f4f1;">
+        <div class="container">
+            <h2 class="section-title">Personajes Ilustres</h2>
+            <div class="cards-grid">
+                
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Miguel Hidalgo y Costilla</h3>
+                        <p><strong>"El Padre de la Patria"</strong></p>
+                        <p>Sacerdote y revolucionario que dio el 'Grito de Dolores', iniciando el movimiento de Independencia en 1810.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h3>José María Morelos y Pavón</h3>
+                        <p><strong>"El Siervo de la Nación"</strong></p>
+                        <p>Líder militar y político organizador de la segunda etapa de la independencia y autor de "Sentimientos de la Nación".</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Josefa Ortíz de Domínguez</h3>
+                        <p><strong>"La Corregidora"</strong></p>
+                        <p>Pieza clave al avisar a los insurgentes que la conspiración de Querétaro había sido descubierta.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Ignacio Allende</h3>
+                        <p><strong>Militar e Insurgente</strong></p>
+                        <p>Capitán del ejército español que simpatizó con la causa independentista y luchó junto a Hidalgo.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 3: DATOS CURIOSOS Y MITOS -->
+    <section id="mitos">
+        <div class="container">
+            <h2 class="section-title">Datos Curiosos y Mitos</h2>
+            <div class="grid-facts">
+                
+                <div class="fact-box">
+                    <h4>Mito: ¿El Grito fue el 15 o el 16?</h4>
+                    <p>El grito ocurrió en la madrugada del 16 de septiembre de 1810. Sin embargo, Porfirio Díaz comenzó a celebrarlo la noche del 15 para hacerlo coincidir con su cumpleaños.</p>
+                </div>
+
+                <div class="fact-box">
+                    <h4>Dato: La Campana Original</h4>
+                    <p>La campana que tocó Miguel Hidalgo en Dolores Hidalgo se encuentra actualmente sobre el balcón principal del Palacio Nacional en la Ciudad de México.</p>
+                </div>
+
+                <div class="fact-box">
+                    <h4>Mito: Juan Escutia y la Bandera</h4>
+                    <p>Historiadores coinciden en que el acto de Juan Escutia envolviéndose en la bandera y arrojándose al vacío pertenece más a un relato de romanticismo patrio que a un hecho documentado estrictamente.</p>
+                </div>
+
+                <div class="fact-box">
+                    <h4>Dato: El Chile en Nogada</h4>
+                    <p>Este platillo tradicional fue creado por monjas agustinas en Puebla para celebrar la consumación de la independencia y presentar los colores del Ejército Trigarante (verde, blanco y rojo).</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <div class="container">
+            <p>&copy; Sitio Informativo - Mes Patrio | Septiembre</p>
+        </div>
+    </footer>
+
+</body>
+</html>

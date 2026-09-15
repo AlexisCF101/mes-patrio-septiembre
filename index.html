@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Septiembre: Mes Patrio</title>
     <style>
-        /* --- VARIABLES DE COLOR (Paleta Patria) --- */
         :root {
             --verde-patrio: #006847;
             --blanco: #ffffff;
@@ -15,7 +14,6 @@
             --gris-borde: #e0e0e0;
         }
 
-        /* --- ESTILOS GENERALES --- */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -35,7 +33,6 @@
             padding: 0 20px;
         }
 
-        /* --- HEADER & NAVEGACIÓN --- */
         header {
             background-color: var(--blanco);
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
@@ -79,7 +76,6 @@
             color: var(--rojo-patrio);
         }
 
-        /* --- BANNER (HERO) --- */
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
                         url('https://images.unsplash.com/photo-1568402102990-bc541580b59f?q=80&w=1000') center/cover;
@@ -113,7 +109,6 @@
             border-color: var(--blanco);
         }
 
-        /* --- SECCIONES --- */
         section {
             padding: 60px 0;
         }
@@ -135,7 +130,6 @@
             margin: 10px auto 0;
         }
 
-        /* --- LÍNEA DE TIEMPO --- */
         .timeline {
             position: relative;
             max-width: 800px;
@@ -191,7 +185,6 @@
             margin-bottom: 5px;
         }
 
-        /* --- PERSONAJES ILUSTRES --- */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -220,7 +213,6 @@
             margin-bottom: 10px;
         }
 
-        /* --- DATOS CURIOSOS Y MITOS --- */
         .grid-facts {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -240,7 +232,6 @@
             margin-bottom: 10px;
         }
 
-        /* --- FOOTER --- */
         footer {
             background-color: var(--texto-oscuro);
             color: var(--blanco);
@@ -249,7 +240,6 @@
             border-top: 5px solid var(--verde-patrio);
         }
 
-        /* RESPONSIVO */
         @media screen and (max-width: 768px) {
             .timeline::after { left: 31px; }
             .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
@@ -260,7 +250,6 @@
 </head>
 <body>
 
-    <!-- ENCABEZADO -->
     <header>
         <div class="container">
             <nav>
@@ -274,7 +263,6 @@
         </div>
     </header>
 
-    <!-- BANNER PRINCIPAL -->
     <div class="hero">
         <div class="container">
             <h1>Acontecimientos del Mes Patrio</h1>
@@ -283,7 +271,6 @@
         </div>
     </div>
 
-    <!-- SECCIÓN 1: LÍNEA DE TIEMPO -->
     <section id="fechas">
         <div class="container">
             <h2 class="section-title">Línea de Tiempo de Septiembre</h2>
@@ -333,7 +320,6 @@
         </div>
     </section>
 
-    <!-- SECCIÓN 2: PERSONAJES ILUSTRES -->
     <section id="personajes" style="background-color: #f0f4f1;">
         <div class="container">
             <h2 class="section-title">Personajes Ilustres</h2>
@@ -375,7 +361,6 @@
         </div>
     </section>
 
-    <!-- SECCIÓN 3: DATOS CURIOSOS Y MITOS -->
     <section id="mitos">
         <div class="container">
             <h2 class="section-title">Datos Curiosos y Mitos</h2>
@@ -405,7 +390,6 @@
         </div>
     </section>
 
-    <!-- PIE DE PÁGINA -->
     <footer>
         <div class="container">
             <p>&copy; Sitio Informativo - Mes Patrio | Septiembre</p>
